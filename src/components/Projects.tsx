@@ -2,43 +2,38 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Github, TrendingUp, Zap, Shield } from "lucide-react";
-
 const Projects = () => {
-  const projects = [
-    {
-      title: "Intelligent Road Safety System",
-      description: "YOLOv5s-based traffic safety model with 98.5% accident prediction accuracy. Real-time monitoring system for traffic analysis and accident prevention.",
-      impact: "98.5% accident prediction accuracy",
-      tech: ["YOLOv5s", "Computer Vision", "PyTorch", "OpenCV", "Python"],
-      icon: Shield,
-      gradient: "from-red-500/20 to-orange-500/20",
-      featured: true
-    },
-    {
-      title: "VoiceGuard – GPT-powered Assistant",
-      description: "Built real-time AI assistant integrating GPT, Whisper API, and Flask backend. Features voice recognition, natural language processing, and intelligent responses.",
-      impact: "Real-time voice processing",
-      tech: ["GPT API", "Whisper API", "Flask", "JavaScript", "Python"],
-      icon: Zap,
-      gradient: "from-blue-500/20 to-purple-500/20",
-      featured: true
-    },
-    {
-      title: "Real-Time GNSS Processing App",
-      description: "React Native-based GNSS visualization app improving navigation performance by 2.5x. Features real-time GPS tracking and enhanced location accuracy.",
-      impact: "2.5x performance improvement",
-      tech: ["React Native", "GNSS", "JavaScript", "Mobile Development"],
-      icon: TrendingUp,
-      gradient: "from-green-500/20 to-teal-500/20",
-      featured: false
-    }
-  ];
-
-  return (
-    <section id="projects" className="py-20 gradient-bg relative overflow-hidden">
+  const projects = [{
+    title: "Intelligent Road Safety System",
+    description: "YOLOv5s-based traffic safety model with 98.5% accident prediction accuracy. Real-time monitoring system for traffic analysis and accident prevention.",
+    impact: "98.5% accident prediction accuracy",
+    tech: ["YOLOv5s", "Computer Vision", "PyTorch", "OpenCV", "Python"],
+    icon: Shield,
+    gradient: "from-red-500/20 to-orange-500/20",
+    featured: true
+  }, {
+    title: "VoiceGuard – GPT-powered Assistant",
+    description: "Built real-time AI assistant integrating GPT, Whisper API, and Flask backend. Features voice recognition, natural language processing, and intelligent responses.",
+    impact: "Real-time voice processing",
+    tech: ["GPT API", "Whisper API", "Flask", "JavaScript", "Python"],
+    icon: Zap,
+    gradient: "from-blue-500/20 to-purple-500/20",
+    featured: true
+  }, {
+    title: "Real-Time GNSS Processing App",
+    description: "React Native-based GNSS visualization app improving navigation performance by 2.5x. Features real-time GPS tracking and enhanced location accuracy.",
+    impact: "2.5x performance improvement",
+    tech: ["React Native", "GNSS", "JavaScript", "Mobile Development"],
+    icon: TrendingUp,
+    gradient: "from-green-500/20 to-teal-500/20",
+    featured: false
+  }];
+  return <section id="projects" className="py-20 gradient-bg relative overflow-hidden">
       {/* Enhanced Background Elements */}
       <div className="absolute top-20 right-20 w-80 h-80 bg-primary/8 rounded-full blur-3xl floating-animation" />
-      <div className="absolute bottom-20 left-20 w-96 h-96 bg-blue-500/6 rounded-full blur-3xl floating-animation" style={{animationDelay: '3s'}} />
+      <div className="absolute bottom-20 left-20 w-96 h-96 bg-blue-500/6 rounded-full blur-3xl floating-animation" style={{
+      animationDelay: '3s'
+    }} />
       
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-16 animate-fade-in">
@@ -50,12 +45,9 @@ const Projects = () => {
 
         <div className="grid lg:grid-cols-2 gap-8 mb-8">
           {/* Featured Projects */}
-          {projects.filter(p => p.featured).map((project, index) => (
-            <Card
-              key={index}
-              className={`glass-effect morphing-border bg-gradient-to-br ${project.gradient} card-hover relative overflow-hidden group`}
-              style={{animationDelay: `${index * 0.2}s`}}
-            >
+          {projects.filter(p => p.featured).map((project, index) => <Card key={index} className={`glass-effect morphing-border bg-gradient-to-br ${project.gradient} card-hover relative overflow-hidden group`} style={{
+          animationDelay: `${index * 0.2}s`
+        }}>
               <CardContent className="p-8">
                 <div className="flex items-start justify-between mb-6">
                   <div className="w-14 h-14 rounded-full bg-gradient-to-br from-primary/30 to-blue-500/30 backdrop-blur-sm flex items-center justify-center pulse-glow">
@@ -80,22 +72,13 @@ const Projects = () => {
                 </div>
 
                 <div className="flex flex-wrap gap-2 mb-6">
-                  {project.tech.map((tech, techIndex) => (
-                    <Badge
-                      key={techIndex}
-                      variant="secondary"
-                      className="bg-background/50 text-foreground border border-border/50"
-                    >
+                  {project.tech.map((tech, techIndex) => <Badge key={techIndex} variant="secondary" className="bg-background/50 text-foreground border border-border/50">
                       {tech}
-                    </Badge>
-                  ))}
+                    </Badge>)}
                 </div>
 
                 <div className="flex gap-3">
-                  <Button size="sm" className="bg-primary hover:bg-primary/90 text-primary-foreground">
-                    <ExternalLink className="w-4 h-4 mr-2" />
-                    Live Demo
-                  </Button>
+                  
                   <Button size="sm" variant="outline" className="border-border/50">
                     <Github className="w-4 h-4 mr-2" />
                     Source Code
@@ -105,17 +88,12 @@ const Projects = () => {
                 {/* Subtle glow effect */}
                 <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
               </CardContent>
-            </Card>
-          ))}
+            </Card>)}
         </div>
 
         {/* Other Projects */}
         <div className="grid gap-6">
-          {projects.filter(p => !p.featured).map((project, index) => (
-            <Card
-              key={index}
-              className={`bg-gradient-to-r ${project.gradient} border-border/50 card-hover group`}
-            >
+          {projects.filter(p => !p.featured).map((project, index) => <Card key={index} className={`bg-gradient-to-r ${project.gradient} border-border/50 card-hover group`}>
               <CardContent className="p-6">
                 <div className="flex flex-col md:flex-row md:items-center gap-6">
                   <div className="flex items-center gap-4">
@@ -135,15 +113,9 @@ const Projects = () => {
                       {project.description}
                     </p>
                     <div className="flex flex-wrap gap-2">
-                      {project.tech.map((tech, techIndex) => (
-                        <Badge
-                          key={techIndex}
-                          variant="secondary"
-                          className="bg-background/50 text-foreground border border-border/50 text-sm"
-                        >
+                      {project.tech.map((tech, techIndex) => <Badge key={techIndex} variant="secondary" className="bg-background/50 text-foreground border border-border/50 text-sm">
                           {tech}
-                        </Badge>
-                      ))}
+                        </Badge>)}
                     </div>
                   </div>
 
@@ -157,12 +129,9 @@ const Projects = () => {
                   </div>
                 </div>
               </CardContent>
-            </Card>
-          ))}
+            </Card>)}
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Projects;

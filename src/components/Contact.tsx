@@ -1,58 +1,45 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Mail, Phone, MapPin, Linkedin, Github, ExternalLink } from "lucide-react";
-
 const Contact = () => {
-  const contactInfo = [
-    {
-      icon: Mail,
-      label: "Email",
-      value: "vinaykumarmd02@gmail.com",
-      href: "mailto:vinaykumarmd02@gmail.com"
-    },
-    {
-      icon: Phone,
-      label: "Phone",
-      value: "+1 (347) 940-9376",
-      href: "tel:+13479409376"
-    },
-    {
-      icon: MapPin,
-      label: "Location",
-      value: "Brooklyn, United States",
-      href: null
-    }
-  ];
-
-  const socialLinks = [
-    {
-      icon: Linkedin,
-      label: "LinkedIn",
-      href: "https://linkedin.com/in/vinaykumar",
-      color: "hover:text-blue-400"
-    },
-    {
-      icon: Github,
-      label: "GitHub",
-      href: "https://github.com/vinaykumar",
-      color: "hover:text-gray-400"
-    },
-    {
-      icon: ExternalLink,
-      label: "ResearchGate",
-      href: "https://researchgate.net/profile/vinaykumar",
-      color: "hover:text-teal-400"
-    },
-    {
-      icon: ExternalLink,
-      label: "Google Scholar",
-      href: "https://scholar.google.com/citations?user=vinaykumar",
-      color: "hover:text-red-400"
-    }
-  ];
-
-  return (
-    <section id="contact" className="py-20 bg-secondary/10">
+  const contactInfo = [{
+    icon: Mail,
+    label: "Email",
+    value: "vinaykumarmd02@gmail.com",
+    href: "mailto:vinaykumarmd02@gmail.com"
+  }, {
+    icon: Phone,
+    label: "Phone",
+    value: "+1 (347) 940-9376",
+    href: "tel:+13479409376"
+  }, {
+    icon: MapPin,
+    label: "Location",
+    value: "Brooklyn, United States",
+    href: null
+  }];
+  const socialLinks = [{
+    icon: Linkedin,
+    label: "LinkedIn",
+    href: "https://linkedin.com/in/vinaykumar",
+    color: "hover:text-blue-400"
+  }, {
+    icon: Github,
+    label: "GitHub",
+    href: "https://github.com/vinaykumar",
+    color: "hover:text-gray-400"
+  }, {
+    icon: ExternalLink,
+    label: "ResearchGate",
+    href: "https://researchgate.net/profile/vinaykumar",
+    color: "hover:text-teal-400"
+  }, {
+    icon: ExternalLink,
+    label: "Google Scholar",
+    href: "https://scholar.google.com/citations?user=vinaykumar",
+    color: "hover:text-red-400"
+  }];
+  return <section id="contact" className="py-20 bg-secondary/10">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold mb-6 hero-text">Let's Connect</h2>
@@ -74,26 +61,7 @@ const Contact = () => {
                   </p>
                   
                   <div className="space-y-6">
-                    {contactInfo.map((contact, index) => (
-                      <div key={index} className="flex items-center gap-4">
-                        <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                          <contact.icon className="w-5 h-5 text-primary" />
-                        </div>
-                        <div>
-                          <p className="text-sm text-muted-foreground">{contact.label}</p>
-                          {contact.href ? (
-                            <a
-                              href={contact.href}
-                              className="text-foreground hover:text-primary transition-colors font-medium"
-                            >
-                              {contact.value}
-                            </a>
-                          ) : (
-                            <p className="text-foreground font-medium">{contact.value}</p>
-                          )}
-                        </div>
-                      </div>
-                    ))}
+                    {contactInfo.map((contact, index) => {})}
                   </div>
                 </CardContent>
               </Card>
@@ -103,18 +71,11 @@ const Contact = () => {
                 <CardContent className="p-8">
                   <h3 className="text-xl font-semibold mb-6">Quick Actions</h3>
                   <div className="space-y-4">
-                    <Button
-                      className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
-                      onClick={() => window.open('mailto:vinaykumarmd02@gmail.com', '_blank')}
-                    >
+                    <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground" onClick={() => window.open('mailto:vinaykumarmd02@gmail.com', '_blank')}>
                       <Mail className="w-4 h-4 mr-2" />
                       Send Email
                     </Button>
-                    <Button
-                      variant="outline"
-                      className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground"
-                      onClick={() => window.open('tel:+13479409376', '_blank')}
-                    >
+                    <Button variant="outline" className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground" onClick={() => window.open('tel:+13479409376', '_blank')}>
                       <Phone className="w-4 h-4 mr-2" />
                       Call Now
                     </Button>
@@ -133,18 +94,10 @@ const Contact = () => {
                   </p>
                   
                   <div className="grid grid-cols-2 gap-4">
-                    {socialLinks.map((social, index) => (
-                      <a
-                        key={index}
-                        href={social.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={`flex items-center gap-3 p-4 rounded-lg bg-secondary/50 hover:bg-secondary transition-all duration-300 group border border-border/50 hover:border-primary/50 ${social.color}`}
-                      >
+                    {socialLinks.map((social, index) => <a key={index} href={social.href} target="_blank" rel="noopener noreferrer" className={`flex items-center gap-3 p-4 rounded-lg bg-secondary/50 hover:bg-secondary transition-all duration-300 group border border-border/50 hover:border-primary/50 ${social.color}`}>
                         <social.icon className="w-5 h-5 text-muted-foreground group-hover:text-current transition-colors" />
                         <span className="font-medium">{social.label}</span>
-                      </a>
-                    ))}
+                      </a>)}
                   </div>
                 </CardContent>
               </Card>
@@ -167,8 +120,6 @@ const Contact = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Contact;
