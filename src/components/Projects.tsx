@@ -35,12 +35,16 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="py-20">
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold mb-6 hero-text">Featured Projects</h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Innovative AI solutions solving real-world challenges across multiple domains
+    <section id="projects" className="py-20 gradient-bg relative overflow-hidden">
+      {/* Enhanced Background Elements */}
+      <div className="absolute top-20 right-20 w-80 h-80 bg-primary/8 rounded-full blur-3xl floating-animation" />
+      <div className="absolute bottom-20 left-20 w-96 h-96 bg-blue-500/6 rounded-full blur-3xl floating-animation" style={{animationDelay: '3s'}} />
+      
+      <div className="container mx-auto px-6 relative z-10">
+        <div className="text-center mb-16 animate-fade-in">
+          <h2 className="text-4xl lg:text-5xl font-black mb-6 hero-text text-shadow-soft">Featured Projects</h2>
+          <p className="text-xl text-foreground/80 max-w-3xl mx-auto leading-relaxed font-medium">
+            Innovative <span className="text-primary font-bold">AI solutions</span> solving real-world challenges across multiple domains
           </p>
         </div>
 
@@ -49,14 +53,15 @@ const Projects = () => {
           {projects.filter(p => p.featured).map((project, index) => (
             <Card
               key={index}
-              className={`bg-gradient-to-br ${project.gradient} border-border/50 card-hover relative overflow-hidden group`}
+              className={`glass-effect morphing-border bg-gradient-to-br ${project.gradient} card-hover relative overflow-hidden group`}
+              style={{animationDelay: `${index * 0.2}s`}}
             >
               <CardContent className="p-8">
                 <div className="flex items-start justify-between mb-6">
-                  <div className="w-12 h-12 rounded-full bg-background/10 backdrop-blur-sm flex items-center justify-center">
-                    <project.icon className="w-6 h-6 text-primary" />
+                  <div className="w-14 h-14 rounded-full bg-gradient-to-br from-primary/30 to-blue-500/30 backdrop-blur-sm flex items-center justify-center pulse-glow">
+                    <project.icon className="w-7 h-7 text-primary" />
                   </div>
-                  <Badge className="bg-primary text-primary-foreground">Featured</Badge>
+                  <Badge className="enhanced-button text-white font-bold shadow-lg">Featured</Badge>
                 </div>
 
                 <h3 className="text-2xl font-bold mb-4 group-hover:text-primary transition-colors">

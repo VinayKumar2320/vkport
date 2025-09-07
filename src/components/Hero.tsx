@@ -31,28 +31,28 @@ const Hero = () => {
             <div className="absolute inset-0 rounded-full border-2 border-primary/20 animate-spin" style={{animationDuration: '8s'}} />
           </div>
 
-          {/* Hero Content */}
+          {/* Enhanced Hero Content */}
           <div className="flex-1 text-center lg:text-left animate-slide-in">
-            <h1 className="text-5xl lg:text-7xl font-bold mb-6">
+            <h1 className="text-5xl lg:text-7xl font-black mb-6 text-shadow-soft">
               <span className="hero-text">Vinay Kumar</span>
             </h1>
-            <p className="text-xl lg:text-2xl text-muted-foreground mb-8 leading-relaxed">
-              AI & Machine Learning Engineer<br />
-              <span className="text-primary">Data Science Enthusiast</span><br />
-              Problem Solver
+            <p className="text-xl lg:text-2xl text-foreground/80 mb-8 leading-relaxed font-medium">
+              <span className="text-2xl lg:text-3xl font-bold text-primary block mb-2">AI & Machine Learning Engineer</span>
+              <span className="text-blue-600 font-semibold">Data Science Enthusiast</span><br />
+              <span className="text-purple-600 font-semibold">Problem Solver</span>
             </p>
             
             <div className="flex flex-wrap gap-4 justify-center lg:justify-start mb-8">
               <Button
                 onClick={() => scrollToSection("projects")}
-                className="bg-gradient-to-r from-primary via-blue-500 to-purple-500 hover:from-primary/90 hover:via-blue-500/90 hover:to-purple-500/90 text-white shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-500 px-8 py-3 text-lg glow-effect"
+                className="enhanced-button text-white shadow-2xl transform hover:scale-110 transition-all duration-500 px-10 py-4 text-lg font-bold glow-effect"
               >
                 View Projects
               </Button>
               <Button
                 variant="outline"
                 onClick={() => scrollToSection("contact")}
-                className="glass-effect border-primary/30 text-primary hover:bg-primary/10 hover:text-primary px-8 py-3 text-lg transform hover:scale-105 transition-all duration-300"
+                className="morphing-border text-primary hover:bg-primary/10 hover:text-primary px-10 py-4 text-lg font-semibold transform hover:scale-105 transition-all duration-500"
               >
                 Get In Touch
               </Button>

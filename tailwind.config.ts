@@ -133,6 +133,36 @@ export default {
           "100%": {
             backgroundPosition: "200% 0"
           }
+        },
+        "border-rotate": {
+          "0%": {
+            transform: "rotate(0deg)"
+          },
+          "100%": {
+            transform: "rotate(360deg)"
+          }
+        },
+        "wave": {
+          "0%, 100%": {
+            transform: "translateY(0)"
+          },
+          "50%": {
+            transform: "translateY(-20px)"
+          }
+        },
+        "spotlight": {
+          "0%": {
+            opacity: "0",
+            transform: "scale(0.5)"
+          },
+          "50%": {
+            opacity: "1",
+            transform: "scale(1.1)"
+          },
+          "100%": {
+            opacity: "0",
+            transform: "scale(1)"
+          }
         }
       },
       animation: {
@@ -141,9 +171,12 @@ export default {
         "fade-in": "fade-in 0.6s ease-out",
         "slide-in": "slide-in 0.6s ease-out",
         "glow": "glow 2s ease-in-out infinite",
-        "float": "float 6s ease-in-out infinite",
-        "pulse-glow": "pulse-glow 2s ease-in-out infinite alternate",
-        "shimmer": "shimmer 2s linear infinite",
+        "float": "float 8s ease-in-out infinite",
+        "pulse-glow": "pulse-glow 3s ease-in-out infinite alternate",
+        "shimmer": "shimmer 3s linear infinite",
+        "border-rotate": "border-rotate 4s linear infinite",
+        "wave": "wave 4s ease-in-out infinite",
+        "spotlight": "spotlight 6s ease-in-out infinite",
       },
     },
   },
