@@ -39,7 +39,8 @@ const Contact = () => {
     href: "https://scholar.google.com/citations?user=lX3caZQAAAAJ&hl=en&authuser=2",
     color: "hover:text-red-400"
   }];
-  return <section id="contact" className="py-20 bg-secondary/10">
+  return (
+    <section id="contact" className="py-20 bg-secondary/10">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold mb-6 hero-text">Let's Connect</h2>
@@ -136,6 +137,8 @@ const Contact = () => {
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default Contact;

@@ -30,7 +30,8 @@ const Experience = () => {
     tech: ["Python", "Keras", "NumPy", "Pandas"],
     current: false
   }];
-  return <section id="experience" className="py-20">
+  return (
+    <section id="experience" className="py-20">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold mb-6 hero-text">Experience</h2>
@@ -99,6 +100,8 @@ const Experience = () => {
             </Card>)}
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default Experience;
