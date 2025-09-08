@@ -61,7 +61,23 @@ const Contact = () => {
                   </p>
                   
                   <div className="space-y-6">
-                    {contactInfo.map((contact, index) => {})}
+                    {contactInfo.map((contact, index) => (
+                      <div key={index} className="flex items-center gap-4 p-4 rounded-lg bg-secondary/30 hover:bg-secondary/50 transition-all duration-300 group border border-border/30 hover:border-primary/30">
+                        <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                          <contact.icon className="w-5 h-5 text-primary" />
+                        </div>
+                        <div>
+                          <p className="font-medium text-foreground">{contact.label}</p>
+                          {contact.href ? (
+                            <a href={contact.href} className="text-muted-foreground hover:text-primary transition-colors">
+                              {contact.value}
+                            </a>
+                          ) : (
+                            <p className="text-muted-foreground">{contact.value}</p>
+                          )}
+                        </div>
+                      </div>
+                    ))}
                   </div>
                 </CardContent>
               </Card>

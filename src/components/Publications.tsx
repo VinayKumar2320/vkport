@@ -1,7 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { BookOpen, Award, Users, Brain, Zap, Globe } from "lucide-react";
+import { BookOpen, Award, Users, Brain, Zap, Globe, Star, TrendingUp, FileText, ExternalLink } from "lucide-react";
 
 const Publications = () => {
   const publications = [
@@ -107,36 +107,79 @@ const Publications = () => {
         <div className="grid lg:grid-cols-2 gap-8 mb-8">
           {/* Featured Publications */}
           {publications.filter(p => p.featured).map((publication, index) => (
-            <Card key={index} className={`glass-effect morphing-border bg-gradient-to-br ${publication.gradient} card-hover relative overflow-hidden group`} style={{
+            <Card key={index} className={`glass-effect morphing-border bg-gradient-to-br ${publication.gradient} card-hover relative overflow-hidden group border-2 border-primary/10 hover:border-primary/30 shadow-xl hover:shadow-2xl`} style={{
               animationDelay: `${index * 0.2}s`
             }}>
-              <CardContent className="p-8">
+              {/* Floating background elements */}
+              <div className="absolute top-4 right-4 w-24 h-24 bg-primary/5 rounded-full blur-2xl"></div>
+              <div className="absolute bottom-6 left-6 w-20 h-20 bg-blue-500/5 rounded-full blur-xl"></div>
+              
+              <CardContent className="p-8 relative z-10">
                 <div className="flex items-start justify-between mb-6">
-                  <div className="w-14 h-14 rounded-full bg-gradient-to-br from-primary/30 to-blue-500/30 backdrop-blur-sm flex items-center justify-center pulse-glow">
-                    <publication.icon className="w-7 h-7 text-primary" />
+                  <div className="relative">
+                    <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary/20 via-primary/10 to-blue-500/20 backdrop-blur-sm flex items-center justify-center pulse-glow border border-primary/20 shadow-lg">
+                      <publication.icon className="w-8 h-8 text-primary drop-shadow-sm" />
+                    </div>
+                    <div className="absolute -top-1 -right-1 w-6 h-6 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full flex items-center justify-center shadow-lg animate-pulse">
+                      <Award className="w-3 h-3 text-white" />
+                    </div>
                   </div>
-                  <Badge className="enhanced-button text-white font-bold shadow-lg">
-                    {publication.type}
-                  </Badge>
+                  <div className="flex flex-col gap-2">
+                    <Badge className="enhanced-button text-white font-bold shadow-lg bg-gradient-to-r from-primary to-blue-500 hover:from-primary/90 hover:to-blue-500/90">
+                      <FileText className="w-3 h-3 mr-1" />
+                      {publication.type}
+                    </Badge>
+                    {publication.featured && (
+                      <Badge variant="outline" className="text-xs bg-background/80 backdrop-blur-sm border-border/50">
+                        <Star className="w-3 h-3 mr-1" />
+                        Featured
+                      </Badge>
+                    )}
+                  </div>
                 </div>
 
-                <h3 className="text-2xl font-bold mb-4 group-hover:text-primary transition-colors">
+                <h3 className="text-2xl font-bold mb-4 group-hover:text-primary transition-all duration-300 leading-tight">
                   {publication.title}
                 </h3>
                 
-                <p className="text-muted-foreground mb-6 leading-relaxed">
+                <p className="text-muted-foreground mb-6 leading-relaxed text-sm">
                   {publication.description}
                 </p>
 
-                <div className="mb-6">
+                <div className="mb-6 p-4 rounded-xl bg-gradient-to-r from-primary/5 to-blue-500/5 border border-primary/10">
                   <div className="flex items-center gap-2 text-primary font-semibold">
-                    <Award className="w-4 h-4" />
-                    <span>{publication.impact}</span>
+                    <TrendingUp className="w-4 h-4" />
+                    <span className="text-sm">{publication.impact}</span>
                   </div>
                 </div>
 
-                {/* Subtle glow effect */}
-                <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
+                <div className="flex gap-3">
+                  <Button 
+                    size="sm" 
+                    className="enhanced-button bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg"
+                    onClick={() => {
+                      // You can add specific publication links here
+                      window.open("https://scholar.google.com/citations?user=lX3caZQAAAAJ&hl=en&authuser=2", '_blank');
+                    }}
+                  >
+                    <BookOpen className="w-4 h-4 mr-2" />
+                    Read Paper
+                  </Button>
+                  <Button 
+                    size="sm" 
+                    variant="outline"
+                    className="border-primary/30 text-primary hover:bg-primary/10 hover:border-primary/50"
+                    onClick={() => {
+                      window.open("https://www.researchgate.net/profile/Vinay-Kumar-412?ev=prf_overview", '_blank');
+                    }}
+                  >
+                    <ExternalLink className="w-4 h-4 mr-2" />
+                    Citation
+                  </Button>
+                </div>
+
+                {/* Enhanced glow effect */}
+                <div className="absolute inset-0 bg-gradient-to-r from-primary/8 via-transparent to-blue-500/8 opacity-0 group-hover:opacity-100 transition-all duration-500 pointer-events-none rounded-lg"></div>
               </CardContent>
             </Card>
           ))}
