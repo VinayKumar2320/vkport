@@ -1,20 +1,14 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Trophy, GraduationCap, Target } from "lucide-react";
-
 const About = () => {
-  const achievements = [
-    "Smart India Hackathon 2023 Finalist",
-    "IEEE Hackathon Winner",
-    "IIT Bombay Competition Recognition",
-    "GPA 8.69/10 in AI & ML"
-  ];
-
-  return (
-    <section id="about" className="py-20 gradient-bg relative overflow-hidden">
+  const achievements = ["Smart India Hackathon 2023 Finalist", "IEEE Hackathon Winner", "IIT Bombay Competition Recognition", "GPA 8.69/10 in AI & ML"];
+  return <section id="about" className="py-20 gradient-bg relative overflow-hidden">
       {/* Enhanced Background Elements */}
       <div className="absolute top-0 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl floating-animation" />
-      <div className="absolute bottom-0 right-0 w-72 h-72 bg-blue-500/5 rounded-full blur-2xl floating-animation" style={{animationDelay: '2s'}} />
+      <div className="absolute bottom-0 right-0 w-72 h-72 bg-blue-500/5 rounded-full blur-2xl floating-animation" style={{
+      animationDelay: '2s'
+    }} />
       
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-16 animate-fade-in">
@@ -75,32 +69,21 @@ const About = () => {
                 </div>
                 
                 <div className="grid gap-4">
-                  {achievements.map((achievement, index) => (
-                    <div
-                      key={index}
-                      className="flex items-center gap-4 p-4 rounded-lg bg-background/50 backdrop-blur-sm border border-border/50 hover:border-primary/50 transition-colors"
-                    >
+                  {achievements.map((achievement, index) => <div key={index} className="flex items-center gap-4 p-4 rounded-lg bg-background/50 backdrop-blur-sm border border-border/50 hover:border-primary/50 transition-colors">
                       <div className="w-3 h-3 bg-primary rounded-full flex-shrink-0"></div>
                       <span className="text-foreground font-medium">{achievement}</span>
-                    </div>
-                  ))}
+                    </div>)}
                 </div>
 
                 <div className="mt-8 p-6 bg-background/50 rounded-lg border border-border/50">
                   <h4 className="text-lg font-semibold mb-4 text-primary">Current Status</h4>
-                  <p className="text-muted-foreground">
-                    Currently pursuing my Master's at NYU while working as a Software Developer 
-                    Intern at Healium Intelliscan Corp, where I'm building cutting-edge medical 
-                    image processing pipelines.
-                  </p>
+                  <p className="text-muted-foreground">I'm now studying for my Master's in Computer Science while investigating the latest AI and machine learning technologies. enthusiastic about conducting research, coming up with creative solutions to problems, and creating intelligent systems.</p>
                 </div>
               </CardContent>
             </Card>
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default About;
